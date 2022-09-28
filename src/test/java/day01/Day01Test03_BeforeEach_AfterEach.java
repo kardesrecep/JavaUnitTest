@@ -1,3 +1,5 @@
+package day01;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,7 +36,7 @@ public class Day01Test03_BeforeEach_AfterEach {
         int anlikDeger=str.length();
         int beklenenDeger=28;
         assertEquals(beklenenDeger,anlikDeger);
-        System.out.println(info.getDisplayName()+"calisti");
+        System.out.println(info.getDisplayName()+" calisti");
     }
 
 }
