@@ -1,6 +1,7 @@
 package day03;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 
 import static org.mockito.Mockito.*;
 
@@ -31,6 +32,26 @@ public class C05_Mock_OkulTest {
         verify(dummyObject2,times(2)).ekleOgrenci("Ali");
 
         verify(dummyObject2,times(0)).ekleOgrenci("Buse");
+        verify(dummyObject2,never()).silOgrenci(anyString());
+        // metodhun en az 2 defa cagrildigini test etmek istersek:
+        verify(dummyObject2,atLeast(2)).ekleOgrenci("Ali");
+
+        //methodlarin cagrilma sirasini test etmek istersek
+
+
+
+        }
+    @Test
+    void testSiralama(){
+        C05_Mock_Islemler dummyObject3=mock(C05_Mock_Islemler.class);
+        dummyObject3.ekleOgrenci("Ali");
+        dummyObject3.ekleOgrenci("Salim");
+        dummyObject3.silOgrenci("Ali");
+        //inOrder classi siralama yapmak icin kullanilir
+        InOrder inOrder=inOrder(dummyObject3);
+        inOrder.verify(dummyObject3).ekleOgrenci("Ali");
+        inOrder.verify(dummyObject3).ekleOgrenci("Salim");
+        inOrder.verify(dummyObject3).silOgrenci("Ali");
 
 
 
