@@ -35,6 +35,7 @@ public class C05_Mock_OkulTest {
         verify(dummyObject2,never()).silOgrenci(anyString());
         // metodhun en az 2 defa cagrildigini test etmek istersek:
         verify(dummyObject2,atLeast(2)).ekleOgrenci("Ali");
+        verify(dummyObject2,atMost(2)).ekleOgrenci("Ali");
 
         //methodlarin cagrilma sirasini test etmek istersek
 
